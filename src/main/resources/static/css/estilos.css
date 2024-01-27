@@ -1,0 +1,21 @@
+#tituloPrincipal /*Este es un selector de id, se identifica porque inicia con un #*/
+{
+    color:aquamarine;
+    font-family: sans-serif;
+}
+
+.parrafoSecundario /*este es un selector de clases, se identifica porque inicia con un "."*/
+{
+    color: gray;
+    font-size: 20px;
+}
+
+p {
+    background-color:antiquewhite; 
+}/*Aqui estamos aplicando a todos los p una caracteristica*/
+
+
+p span {
+    color: cadetblue;
+}
+/*Selector descendente: aplica los cambios a conbinaciones como el anterior donde un span este dentro de un p (parrafo)*/
