@@ -1,0 +1,56 @@
+body {
+    font-family: sans-serif;
+    padding: 90px 20px 0px;/*sirve para crear un espacio en el encabezado de la pagina*/
+}
+
+/*Se identifica como clase por el punto inicial*/
+.header{
+    background-color: navy;
+    height: 12%;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+    
+}
+.nav-link{
+    color: white;
+    text-decoration: none;/*Este comando modifica la linea de abajo que aparece en los enlaces, en este caso se le quito*/
+    
+}
+.logo{
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0 40px; /*arriba y abajo 0, y en los lados 40 pixeles. Aleja del borde el texto que nosotros le indiquemos*/
+    line-height: 90px;
+}
+.logo:hover
+{
+    background-color: aqua;
+    transition: 0.7s;
+}
+.nav-menu{
+    display: flex;/*hace que los objetos se junten de lado y no hacia abajo*/
+    margin-right: 40px;/*el margen que se encuentra al borde del nav*/
+    list-style: none; /*elimina la decoracion de la lista osea los puntos que se generan automaticamente*/
+}
+.nav-menu-item{
+    font-size: 18px; /*tama;o de la letra*/
+    margin: 0 10px;/*0 pixeles arriba y abajo, 10 pixeles dereche e izquierda*/
+    line-height: 90px;/*altura de la linea*/
+    width: max-content/*ancho del contenido*/
+}
+.nav-menu-link{
+    padding: 8px 2px; /*espacio entre el contenido y sus propios bordes*/
+    border-radius: 4px;/**/
+}
+.nav-menu-link:hover{
+    background-color: aliceblue;
+    transition: 0.7s;
+}

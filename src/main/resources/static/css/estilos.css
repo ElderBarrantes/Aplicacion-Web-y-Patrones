@@ -1,21 +1,67 @@
-#tituloPrincipal /*Este es un selector de id, se identifica porque inicia con un #*/
+/*#tituloPrincipal Este es un selector de id, se identifica porque inicia con un #
 {
     color:aquamarine;
     font-family: sans-serif;
-}
+}*/
 
-.parrafoSecundario /*este es un selector de clases, se identifica porque inicia con un "."*/
+/*.parrafoSecundario este es un selector de clases, se identifica porque inicia con un "."
 {
     color: gray;
     font-size: 20px;
-}
+}*/
 
-p {
+
+/* p {
     background-color:antiquewhite; 
-}/*Aqui estamos aplicando a todos los p una caracteristica*/
+}Aqui estamos aplicando a todos los p una caracteristica*/
 
 
-p span {
+/*p span {
     color: cadetblue;
 }
-/*Selector descendente: aplica los cambios a conbinaciones como el anterior donde un span este dentro de un p (parrafo)*/
+Selector descendente: aplica los cambios a conbinaciones como el anterior donde un span este dentro de un p (parrafo)*/
+
+/*a:link{
+    color: chocolate;
+}*/
+
+/*a:visited{
+    color: darkgreen;
+    background-color:black;
+}*/
+
+/*a:hover{
+    color: navajowhite;
+    background-color: black; 
+}*/
+
+/*a:active{
+    color:black;
+    background-color: red; 
+}*/
+
+/*p:nth-child(2){
+    background-color: red;
+    
+}Cambia el color de el segundo parrafo*/ 
+
+/*p:nth-child(even){
+    background-color: green;*/
+    
+/*Cambia el color de todos los parrafos*/
+
+/*p:nth-child(odd){
+    background-color: blue;
+    
+}*/
+
+.contenedor{
+    top: 12%;
+    left: 0;
+    height: 78%;
+    background-color: bisque;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    position: fix;
+}
