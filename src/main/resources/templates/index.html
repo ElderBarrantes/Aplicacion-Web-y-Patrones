@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: head" > <!-- aqui estamos reemplazando el bloque head con el que se indica entre comillas -->
     </head>
     <body>
-        <div>Este es el index en Templates</div>
+        <header th:replace="layout/plantilla :: header"></header>
+        <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>
