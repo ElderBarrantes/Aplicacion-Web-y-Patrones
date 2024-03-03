@@ -31,7 +31,7 @@ public class ProjectConfig implements WebMvcConfigurer {
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         var lci = new LocaleChangeInterceptor();
-        lci.setParamName("lang");
+        lci.setParamName("lang");//este lang se encuentra en plantilla y es un parametro que se utiliza y le asignamos ya sea una opcion espanol o ingles
         return lci;
     }
 
