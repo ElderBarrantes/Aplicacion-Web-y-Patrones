@@ -2,6 +2,7 @@ package com.tienda.domian;
 
 import jakarta.persistence.*;//El * permite usar cualquier libreria de persistence
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 
@@ -21,7 +22,11 @@ public class Categoria implements Serializable {//Permite que cuando guardamos o
     private String descripcion;
     private String rutaImagen;
     private boolean activo;// en los booleanos no se llaman getActivo sino isActivo.
-
+    
+    @OneToMany
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    List<Producto> productos;
+    
     public Categoria() {
     }
     
