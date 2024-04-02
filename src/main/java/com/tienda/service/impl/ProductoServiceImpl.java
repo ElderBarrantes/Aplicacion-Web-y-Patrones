@@ -13,13 +13,15 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Autowired//permite auto crear el metodo productoDao o cualquier otra producto
     private ProductoDao productoDao;//este metodo sirve para interactuar con la BD
-
+    
+    //aqui generamos una lista de los productos que estan activos 
     @Override
     @Transactional(readOnly = true)
     public List<Producto> getProductos(boolean activos) {
         var lista = productoDao.findAll();
-        if (activos) {
-            lista.removeIf(e -> !e.isActivo());
+        if (activos)//revisa la condicion si activos son true 
+        {
+            lista.removeIf(e -> !e.isActivo());//remueve los articulos que no son activos dentro de la lista.
         }
         return lista;
     }

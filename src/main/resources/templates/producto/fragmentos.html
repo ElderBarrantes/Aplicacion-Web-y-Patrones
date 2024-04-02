@@ -14,7 +14,7 @@
                             type="button" 
                             class="btn btn-primary btn-block" 
                             data-bs-toggle="modal" 
-                            data-bs-target="#agregarProducto">
+                            data-bs-target="#agregarProducto"><!-- Este hace referencia al id del div del siguiente fragmento NO del fragmento como tal solo del "div" esto por el signo "#", el cual nos mostrara la ventana del modal -->
                             <i class="fas fa-plus"></i> [[#{producto.agregar}]]
                         </button>
                     </div>
@@ -35,13 +35,22 @@
                             <h5 class="modal-title">[[#{producto.agregar}]]</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div> 
+                        <!-- este th:action se refiere al controlador, alli encontramos el /producto y la accion que es /guardar -->
+                        <!-- Ademas de que recibira un producto por el model (th:object="${producto}") -->
                         <form th:action="@{/producto/guardar}" th:object="${producto}"
                               method="POST" class="was-validated" enctype="multipart/form-data">
                             <div class="modal-body">
                                 <div class="mb-3">
+                                    <!-- Aqui estamos haciendo el llamado del categoria que esta en el producto, pero no como atributo sino de un llamado que se realizo en esa clase "categoria.idCategoria" -->
                                     <label for="categoria.idCategoria">[[#{producto.categoria}]]</label>
+                                    <!-- Se agrega un select porque este despliega un combo-box-->
                                     <select name="categoria.idCategoria" class="form-control">
+                                        <!-- El  ${categorias} podemos encontrarlo en los model, mas especificamente en listado en la clase controller del producto-->
+                                        <!-- se utiliza un th:each (for each) para mostrar todos los productos-->                                        
+                                        <!-- item es solo un nombre generico-->                                        
+                                        <!-- el th:value es el valor que le damos al option. Aqui le asignamos el item del each pasado y el valor de idCategoria que se encuentra en el domain Categoria-->                                        
                                         <option th:each="item : ${categorias}" th:value="${item.idCategoria}">
+                                            <!-- aqui agregamos la descripcion de cada categoria-->
                                             [[${item.descripcion}]]
                                         </option>
                                     </select>
@@ -58,6 +67,7 @@
                                     <label for="precio">[[#{producto.precio}]]</label>
                                     <input type="number" class="form-control" name="precio" required="true"/>
                                 </div>
+                                <!-- type="number" quiere decir que el campo solo acepta numeros. Tambien puede ser text para que sean solo texto-->
                                 <div class="mb-3">
                                     <label for="existencias">[[#{producto.existencias}]]</label>
                                     <input type="number" class="form-control" name="existencias" required="true"/>

@@ -7,6 +7,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+
+//Dao nos mantiene los metodos o instancias de CRUD (guardar, buscar, etc). Son interfaces.
+
+
+//El JpaRepository<> Lo que hace es generar un CRUD para la entidad que nosotros le digamos dentro de las bocas.
+//usualmente se utiliza para la primary key de la tabla.
 public interface ProductoDao extends JpaRepository<Producto, Long>{
     //Ejemplo de método utilizando Métodos de Query
     public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup);

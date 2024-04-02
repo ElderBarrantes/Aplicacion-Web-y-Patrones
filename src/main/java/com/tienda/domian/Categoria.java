@@ -23,9 +23,9 @@ public class Categoria implements Serializable {//Permite que cuando guardamos o
     private String rutaImagen;
     private boolean activo;// en los booleanos no se llaman getActivo sino isActivo.
     
-    @OneToMany
-    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
-    List<Producto> productos;
+    @OneToMany//asociamos una categoria con muchos productos
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)//no es insertable ni modificable desde aqui.
+    List<Producto> productos;//se crea una lista ya que son varios productos los que  se pueden asociar con una categoria
     
     public Categoria() {
     }

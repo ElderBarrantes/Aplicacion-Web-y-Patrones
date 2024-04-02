@@ -14,7 +14,8 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Autowired//permite auto crear el metodo categoriaDao o cualquier otra categoria
     private CategoriaDao categoriaDao;//este metodo sirve para interactuar con la BD
-
+    
+    
     @Override
     @Transactional(readOnly = true)
     public List<Categoria> getCategorias(boolean activos) {

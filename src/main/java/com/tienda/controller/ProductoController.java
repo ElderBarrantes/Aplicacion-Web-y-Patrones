@@ -22,6 +22,9 @@ public class ProductoController {
     @Autowired
     ProductoService productoService;//nos permite llamar a los metodos con el Autowired
     
+    
+    //este objeto nos permite traer todas las categorias de la BD. Para que asi cuando el 
+    //cliente necesite crear un nuevo producto y asignarle una categoria, se muestren todas.
     @Autowired
     CategoriaService categoriaService;
     
@@ -62,6 +65,8 @@ public class ProductoController {
         return "redirect:/producto/listado";
     }
 
+    
+    //getmapping hace un request de un controlador en especifico en este caso /modificar/{idProducto} 
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);

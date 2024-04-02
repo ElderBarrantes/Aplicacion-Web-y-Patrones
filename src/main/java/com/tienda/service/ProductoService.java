@@ -4,6 +4,9 @@ package com.tienda.service;
 import com.tienda.domian.Producto;
 import java.util.List;
 
+//En esta clase obtenemos los servicios que queremos implementar en nuestra BD para que el 
+//usuario pueda accionarlas despues en la pagina o vista del sitio web.
+
 public interface ProductoService {
     
     // Se obtiene un listado de productos en un List
