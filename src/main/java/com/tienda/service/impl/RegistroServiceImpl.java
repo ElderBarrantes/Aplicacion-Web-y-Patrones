@@ -35,8 +35,7 @@ public class RegistroServiceImpl implements RegistroService {
     @Override
     public Model activar(Model model, String username, String clave) {
         Usuario usuario = 
-                usuarioService.getUsuarioPorUsernameYPassword(username, 
-                        clave);
+                usuarioService.getUsuarioPorUsernameYPassword(username,clave);
         if (usuario != null) {
             model.addAttribute("usuario", usuario);
         } else {
@@ -58,7 +57,7 @@ public class RegistroServiceImpl implements RegistroService {
     public void activar(Usuario usuario, MultipartFile imagenFile) {
         var codigo = new BCryptPasswordEncoder();
         usuario.setPassword(codigo.encode(usuario.getPassword()));
-
+        usuario.setActivo(true);
         if (!imagenFile.isEmpty()) {
             usuarioService.save(usuario, false);
             usuario.setRutaImagen(
